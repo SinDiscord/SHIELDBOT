@@ -2,8 +2,6 @@ const Discord = require("discord.js");
 const bot = new Discord.Client();
 const fs = require ("fs");
 
-var token = "ODY3NTE3ODE2OTA3NjI4NTc0.YPiQ7Q.hSZ4CxWaeJBxYZqpoUsIa88Mehs";
-
 bot.commands = new Discord.Collection();
 
 fs.readdir('./Events/', (error, f) => {
