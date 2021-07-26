@@ -3,7 +3,8 @@ module.exports = bot => {
 
     let statuses = [
         `AGARTHA SHIELD`,
-        `By SinFR`
+        `By SinFR`,
+        `.gg/agarthafr`
     ]
 
     setInterval(function() {
