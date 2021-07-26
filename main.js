@@ -77,14 +77,6 @@ bot.on("message", message => {
     }
 })
 
-bot.on("message", message => {
-
-    if(message.content.includes("ewe")) {
-        message.delete()
-        message.channel.send(`<@${message.author.id}>, votre message a été supprimé car il contenait un mot sur liste noire.`).then(msg => msg.delete({ timeout: 2000 }));
-    }
-})
-
 bot.on("guildMemberAdd", member => {
 
     if(bdd["blacklist"].includes(member.id)) {
@@ -102,14 +94,5 @@ bot.on("guildMemberAdd", member => {
 bot.on("guildMemberRemove", member => {
     member.guild.channels.cache.get("864489838903033867").send(`**${member.tag}** a quitté le serveur.`)
 })
-
-bot.on('ready',() => {
-
-    setInterval(() => {
-        bot.destroy()
-        bot.login(process.env.TOKEN)
-        console.warn("Agartha SHIELD a redemarré")
-    }, 7200000); 
-    })
 
 bot.login(process.env.TOKEN);
